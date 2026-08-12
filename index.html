@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f6f8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="读书工作台">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAXG0lEQVR4nO2deXhN5/bHv5lTSRoZ1BRcRK6IIGmlNZNWE6ERQwRFEkQjopUYeiuNlhgjNCiCIEHJJCFJkZ+hvVXUpU2NRQmNtGZuZLpk8PvDPbkZzvDuffY5Z59tfZ7HHzl7vYMn36yz9vuud70AQUgIA11PQB5//HH7ha7nQLDRrl0bUWlI55Mh8UoPXYpcJwOrEnHbtg7amgqhJoWFRUqfa1vcWh1MkZBJwNJBkcC1JWytDNJQyCTgV4eGAte0sDXaOQmZkKEtYWukUxIyoQhNC1twQdcVMwmZUERdYQspasE6IiETfBBa2IbqdgCQmAn+1NWLEHsSaguaxEyoi5CiVsvFywYnIRNCIQtB+IYfvD00iZnQBDI98fXUvARNYiY0iTqi5ixoEjOhDfiKmpOgScyENuEjamZBk5gJXcBV1EyCppxlQgyw6JBTyEHemdAFXHSnUtAUahBigDX0UCpoEjMhJlhELUguB0GIBYWCJu9MiBFVXpo8NCEp5AqavDMhZpR5afLQhKRoJGjyzoQ+oMhLk4cmJEU9QZN3JvQJeV6aPDQhKUjQhKSoFTRl1BH6jEy/jTw0xc+EPtFQrxRyEJKCBE1IChI0ISkMAFp/JvQfWYEa8tCEpCBBE5KCBE1IChI0ISlI0ISkMNb1BDTBkydPMGHCJCbbNWu+gqOjo4ZnJA5KSkqQlJTEZNuiRQv4+/trdkIaQC1BZ2TsxeDB78Ha2lqo+QhCdXU1zp8/z2RbUVGh4dmIh+Lip4iNjWOydXd304igHz9+DFtbW8H7lcE75NiwYSMiIiLh4zMMly5dFnJOhES5dOky+vTpi7CwcNy9e1cjY/ASdGLiVixbthwAUFhYCD+/Edi7N1PQiRHS4s6dOwgKCkZpaRlycnIwcKAnEhI2oaqqStBxOAt6586dWLhwUb3P/vOf/2DWrAhERy8QfIKE/lNaWorAwOB6XrmsrAxLlizF4MFeOHnylGBjcRJ0amoaoqKiFT5PSkrGxImTUFxcrPbECGlQVVWFadNC8dtvv8l9fv36dQQEjEVk5Gw8fvxY7fGYBZ2VtQ/z5n2KFy+UnwP48ccTGDbMF9ev31B7coT+849/fIbjx4+rtEtPz8DAgZ5IT09XazymVY7c3G8RERGJmpoapk5v3boFX9/h2LDhawwcOJDThI4ePYZdu3ZxatOQZ8+eMdt+8cVCWFu/rtZ43t7eCAgYo1YfUmTt2nVITU1jtn/y5AkiI+cgLS0Dy5cvQ8eOHTiPySTo1NQ0VFdXc+q4pKQEwcFTsHz5Mk6/7KKiIhw5cpTTWOpw5swZtfvo2LGjADORFgcPHsLKlWxLhA356aef4OXljblz52Dq1CkwMjJibssUcmzfvpXXmmRVVRXmzJmLdevWcW5L6DcDBvTH5MnBMDTktzL87NkzLF68BCNGjML169eZ2zGNZmxsjNWr4zB7diSvycXGxiEqKpo5ZCH0nyZNmmDhwi+RmbkXnTp14t1Pfn4+vLyGYOPGBKYogdOfz6xZnyA+/isYG3PfYNyxYwfCw2fSst4rxptvuiMv7yA++eRjXroBgOfPn2Pp0mXw9x+DoqI/ldpy/j4YNWokEhO3wNzcnPPEcnJyERY2g0T9imFiYoI5c2YjO3ufWnkzZ86cxfvve+Hbbw8otOEV4Lz7rid27doBS0tLzm0PHjyEiIhIlct/hPRwdXXFoUMHEBIyFQYG/K6ZLykpQWjodIXvZbxzOd5++22kpaXCzs6Oc9ucnFzK/3hFMTMzw4IF0UhJ2YPWrVvx6sPU1BT9+/eX+0ytbDtX167IyEjHmDEBePDgAXO7mJiF6NrVRZ2hJcmZM2cxcuQoXU8DAPDLL/lo06adrqchl6VLl6B79+5yn6mdD+3o2BEpKbvh7x/AtHU5bVoIJk6cqPB5YOAkBAay5TIr4uHDh3Bze5PJ9sCBXLi6uqo1HqEejo6OuHv3LkpLS1XaBgZOUrqvIciJFScnJ+ze/Y3KvGhvby9ERc0XYkhCQri5ueHAgVx07txZqV3Pnm/hyy+/UGoj2BEsF5cu/31RtJD7vHv37li7dg3vhXZC2rRv3x45OfsVbuA1b94cmzYlqFz6E1RdPXr0wLZt22BiYlLvcweH1khK2obXXntNyOEIiWFubo7Vq+OwbNnSesI1MTHB5s2b0KxZM5V9CO4ue/V6BytWLK/92crKCsnJSbC3txd6KEKiTJjwIXbu3AErKysAwOLFMXB3d2Nqq5Hvf3//0Zg8ORjGxsbYtCkBTk5OmhhGZ9TU1ODWrVvIz89/pc4kapO+ffsgIyMdM2fOxPjx45jbaezU9+efR2HAgAHo16+vStvk5B34/HPFBwc0iY/PMLXaGxkZwdHREd26uaJbt25wdXWFi0sXXjupRH26dHFGly7OnNpoTNAmJibw9Bykqe5FQ3V1Na5evYqrV68iPT0DwMsX5EOHDup4Zq8mtOSgAfr2Vf2tRGgGSRaa0TX9+/fj1c7Z2RnZ2fuEnUwd7t+/j6lTpzHZOjk5IS4ulvdYz58/x+jR2j/FQ4IWGFNTU3h4ePBqa2lpATc3trd5PqhKvRRyLs+fP+fdVh0aCbqqqgoPHz4UdBA7O7tGa9NS5e23PeiFUIc0EvS1a7/Dy8tb0EGys/dp1POIiX79+IUbhDDQS6HAkKB1iyhi6CZNXkPLli11PQ2lVFRU4N///rdSG1tbW7i4dNHOhAi5iELQ/v7+oi/dGh+/BqtWrVZq069fP94nMQhh0KuQY+XKOISHf6yTqkw//KC6+k///rT+rGtE4aFZyMzMwtq1L8+R5eTkwM9vOCIjI9CunfJTFePGjceDB6pXbeLjv1J4iqa0tAz5+flK2xsYGCg8FkRoD70Q9JkzZzF37rzan2tqapCZmYWcnFwEBwfhk08+xuuvyy/ndeNGAe7cuaNyDGVJRqdOnVJ5Ur179+5o0aKFynEIzSL6kKOoqAghIdPkLtRXVlZi8+Yt6Nu3P3bs2KGxQjYsxQa9vb00MjbBDVELWlZX+NGjR0rtnjx5gqioaPj5jVRYtlUdvv/+nyptvLxI0GJA1II2MDCAt7cX80mX/Px8+PgMw4oVsYIVs7l58yZu3ryp1KZDhw5wdKSCjWKgkaC7dHHG7dt/MP2Ljv5co5OzsLDA3Llz8MMP32PMmDFM5xGrqqrw9dfrMXz4CJVCZOHIkSMqbXx9P1B7HEIYRPlSeOXKFbRv3x5mZmYAXl4xtmrVSgQGTsSnn/4DFy9eUtnH+fPnMWTIULU9dV7eYZU2I0eO4NV3t249OJcpVgcu7xjnzp2Hiwv/8g5cKmPt27cPeXl5nPpfvnwZPvig8eEM0Qk6Pz8fAQHj0LRpU8yZE4lRo0bV1gfu1q0bcnNzsH17EuLiVqGsrExpX6qesxAeHgYPDw/8/PNZ/PrrOZSXl9d7/uab7mjfvj2vvktKSkRb56+6uhpPnz7VyliVlZWorKzk1EZRspuoYugbNwoQGBiMiooK3LlzB7Nnz8XgwV44evRYrY2RkRGmTp2CY8eOoHfvXkr769evH9544w215jRw4EDMmzcHqakpuHz5Ig4ePIDFi2Pg5zccbdq0wahR4qh09KqhqK6iaAR97949TJgwAU+ePKn3+e+//46goGCEhEzDn3/+Vft5q1atsGfPbkRFzZf719q6dSusX79O0K1oIyMjdO3qgsDASVi3bi1OnvwREydOEKx/gh1F14iIQtAlJSWYMGGS0gT0Q4fy4On5br277QwNDREa+hGys/ejTZs2tbampqbYvHkTbGxsmE9lm5mZqvefILSKoiKhohD0/PlRuHLlikq78vJyLFmyFCNGjMKtW7dqP+/a1QW5udno2fMtAMCSJYvRrVu32jYsUFK+fiFqQS9btgzBwUHMZcJ+/fVXeHkNwZ49KbWf2draIiVlD1avjsPYsQEAXi7hsb50kaD1B0tLi9oVsIaIQtCWlhZYtGgh9u/PYs4nLi8vx7x5n2L69LBaL2xqalovDZXLKgcJWn+wsbFV+EwUgpbRo0cP5ObmIDr6czRp0oSpTW7ut/DzG4l79+41esblgnRZ2SlC/Cgrsi8qQQMvb9yaNi0ER48eRs+ePZna/PbbbwgLC2/0OUtcDgA2NjZUSFKPsLNT7KFFt7Eiw8HBARkZadiwYSNWrVqtNBaWXSHWkCtXrjKN1aqVbo5/3byp3YMKRUV/olev3ky27u5u2L9/n2YnVIc7d+7Aw+MdJltbWz3y0HUxNDREePgMZGXthYNDa7k2BgYGWLMmXm5yPquHbtVKft+E9rh//z6zbYsWzRU+06mHrqqqYlon7tixI1JTUxARMRv/+te/6j0LC5uOPn16o6SkpFE71lRSOztbue35YmxsTCEMR7gIWtnur04F/dNPpzFu3Hi1+li/fgPWr9+gVh8pKalISUlVq4+6DB3qg4SEjYL19ypw7x67oJs3V+yhRR1yEK8Of/31l2qj/0KCJkTPn3+y191TFnKQoAlRwFpI0tDQUOlLIQmaEAUFBQVMdq1atVR6E5ZOBF1WVoYVK/jXHiakRWlpKXPF27pZlfLQ+irH3bt3ERQUjEuXLsPW1kbbwxMi5Nq135lt27Rpq/S5Vj30xYuXMGyYb+3F9amp6docnhAply5dZLZt104kgj58+DBGjRpdL4no6lW2rWlC2pw7d57ZtlOnTkqfayXkSEpKxr59++WeOo6LW6n0MnJWjh8/jg8/nMh82tjPbzjWrVtb77Pq6uraA7mE9jh16idmW1V3XmrFQ2dmZik8Qp+YuFXt/h8/foxZsyKZxWxgYIAZM8Lqffb8+XOEhExDYGCQ3FRUQjMUFBSgsLCQydbU1BR/+5vy4pw6X7a7cuUKTpw4ybt9VVUVwsNncsoFeO+999C5c+fanysqKhAUNBmHDx/BsWPfwdPzPWRk7OU9J4KdzMwsZtu//91J5TeozgUNAF99Fc+77Wefzcfx4z8y2xsaGiIiYlbtz2VlZZg4MbBeQcanT58iIiISwcGTOf2hENwoLi5GcvIOZnuW/HhRCPr06dP1am+wsmJFLOekosDASXB17QrgpXDHj/8Qp0+flmt75MhReHq+h/3793Oem9R59OiRWkVyZHcmqrrmoy4sglbrpVCoqj/KDj0qIiZmMTZv3sKpTbNmzTB37hwALyuWjh//ocqyYsXFxQgP/xg//PAjYmIWMh8NkzqLFsUgMzMLlpYWsLa2hqWlFSwsmqBJkyZ47bUmMDc3h6mpCUxNTWFsbAxDQ0PU1NSguPgpHjy4j7Nnf+ZULcnAwADvvPO2Sju1BM1SSFwVb7zxBnbsSGY+HFtZWYn586N4pXvGxCyClZUVHj16hICAcZyWDdPS0nD27FmsX/+1wkr/rxLz53+GvLz/Q2lpGUpL1S+5poq33noL9vb2Ku3UCjm4ZEjJw8nJCdnZ+5nF/PDhSyHyEXNwcBCGDvUBAFhbW8PHZwjnJbqCggL4+g5HYuJWTsUIpUjz5s0RFBSotfFkvztVqCXowsLbvNv26vUOsrL2onXrVkz2J0+ego/PUJw5c4bzWO7ubliwILr2Z2NjY0RGRiAzc6/KO1oaUllZiYULFyEoKBjFxcWc5yIlJkyYwFxLRR0sLS0wejRbDUHesykqKsK1a9d4tfXzG45vvtml8F6Uujx79gyLFsVg7NhxvEKcZs2aISFho9wMLXd3N+TlHawtTMOFY8e+g4/PsFd6t9PBoTU8PQdpfJzg4GBYW1sz2fIWdEbGXl5fu6GhH2Ht2jVMd39/9933eP99b2zZkshrrJfVlHYrvdTTwsICK1fGYsuWzWjatCmn/gsLC+Hr64cDBw5ynptU8PFhCwX44uzsjI8/nslsz0vQlZWVSE1N49TG0NAQMTGLEBU1X2VF0IKCAgQGBmHSpEDmPNmGWFlZ4ZtvdqncKpXh7e2Fgwe/hasrtyLf5eXl+OijUMTGxmns0iIxM2jQQI1dNtqhQwds3bqFU1UrXoJes2YtioqKmO3NzMywaVOCypeIGzcKEBERiXffHYxjx77jMzUAL8W8a9dOzqsRDg4OyMrayysEWbduHSZPniJIkXV9wt7eHs7OnVUbcsTDwwP79mWqzH9uCGdBX7hwkdMpa2tra+zZ843Sa88uXLiAGTNmwtPzXWRk7FVrfbtt27bIzt4Hd3c3Xu3NzMywcmUsVq6M5bw2fvToMfj7B+DhQ+W3dkkNZ2dnwfrq1KkTNmxYj4yMNNjYcM+X57QOff36DUyaNIlZcC1btsSuXTvkfu1XVFQgOzsHO3fuwrlz57hMQyEeHh7YsmUTbG0Vl4piZezYALi4dMG0aaGcvo0uXLiAESNGYs+e3QqL40gNVSmdDTE2NkbTpk1ha2uLli1bwsGhNTp37oz+/fuhQ4cOas2Fk6AvX76ER48eM9k6Ojpi9+5dCl/IZs2KEPRlaty4sViyZDHTyyYrrq6uyM3NxuTJU/DLL8qvRq7LrVu3MGZMANLT05iXJfWZGTPCEBr6UW354urqatTU1ODFixe17xXGxsa1/7h+83GBU8jh6+uL6OgolXbdu3dHZmaG0tWFNWvi0bdvHy7Dy8Xe3h7btiUiNnaFoGKWYWdnh9TUFAwZ4s2p3e3btxEfHy/4fMSKkZERzMzMYGFhgddffx1NmzaFjY0N7OzsYGdnB2tra1hYcE9x4ArnGDokJETpNWZ9+vRGauoelfGPubk5EhO31Evj5MrQoT44evQwBg8ezLsPFszNzZGQsBEhIVOZ2/Tt2wcxMYs0OCtCHrxWOVasWC43Lh40aCCSk5NgYWHB1I+FhQW2b98Ge3vF1STl0bp1K2zY8DUSEjYKEi+zYGhoiAULorFo0UKVu2N9+vTG9u3bqIi6DuAlaHNzc8THr663+zZo0EBs3ZrI+SvFwaE11q9fz7SFamVlhfnzP8M///k9PvhAN7e3BgcHYePGDQprQ/Tp0xtJSdtJzDqC906hq6srQkM/AvAyT3Xz5k28Y9jevXs1OhJVFxMTE0yZMhknThzH9OmhGo/DVOHjMwSbNyc0+v/27t2LPLOOUSuzZMaMMLi6duW8myOPyMiIRhsh1tbWCAubjhMnjuPLL7/gtS6pKQYPHoxNmxJqPXWvXu8gKWk7ldHVMQYA8Mcft18AQNu2Dpw7ePbsmWAe8+eff8GIESPRoUN7TJkyGaNHjxa9QNLT05GenoHk5CTRz7W8vBx5ef/HZGtra4MBAwZoeEbCUVj4cq9AbUELzYULF9G1q4vG8gM0QU1NjVbSKAnFyAQtujtWZOf99AkSs3ig3wQhKUjQhKQgQROSggRNSAoSNCEpSNCEpCBBE5KCBE1IChI0ISlI0ISkIEETkoIETUgKEjQhKUjQhKQgQROSwhAA2rVrYwD8L0maIPQJmW7btWtjQB6akBQkaEJSkKAJSdFI0BRHE/pEQ73WClr2YkgQ+ohMvxRyEJKCBE1IinqCpvVoQp+ou/4s+4w8NCEpGgmavDShD8jzzgB5aEJiyBU0eWlCzCjyzgB5aEJiKBQ0eWlCjCjzzgB5aEJiKBU0eWlCTKjyzgCDhyZRE2KARcwAx5CDRE3oAi66YxI0ZeIRYoBFh8wemkIPQhewhhoyOIUcJGpCm3AVM8Bj2Y5ETWgDPmIGeK5Dk6gJTcJXzIAaGyskakITqCNm4L83yaqD7BZaQBw30RL6SV3HqM6qmtpb33UHJ29N8EEoMQMC5XKQqAm+CClmQICQoyEUghAsCC1kGRrZAawraoCETfyPht/gQu9Ca3RLm4RNyNC0kGVoJUeDhP3qoi0hy9Bq0lFDYcsggUsHRYsC2kpw00kWnSJhyyCB6w+qVrW0namp87RQVeIm9A9dphvrXNDyIJHrD2LLlf9/r0fonFPH+ogAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="manifest" href="manifest.webmanifest">
+<title>本地读书工作台</title>
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --ink:#1c1c1e; --sub:#8e8e93; --line:#e5e5e7;
+    --brand:#1c1c1e; --brand2:#f2f2f7; --ok:#34c759; --bad:#ff3b30; --chart:#1c1c1e;
+    --shadow:0 0.5px 2px rgba(0,0,0,0.05); --radius:14px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size:15px; line-height:1.5; padding-bottom:64px; max-width:760px; margin:0 auto;}
+  .app{max-width:760px; margin:0 auto; min-height:100vh;}
+  header{position:sticky; top:0; z-index:10; background:var(--bg); padding:calc(env(safe-area-inset-top) + 16px) 16px 10px; border-bottom:1px solid var(--line);}
+  header .title{font-size:19px; font-weight:700;}
+  header .sub{font-size:12px; color:var(--sub); margin-top:2px;}
+  main{padding:12px 12px 0;}
+  .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:14px; margin-bottom:12px;}
+  .card h3{margin:0 0 12px; font-size:15px; font-weight:700;}
+  .muted{color:var(--sub);}
+  .small{font-size:12px;}
+  .empty{padding:30px; text-align:center; color:var(--sub);}
+  .flex-between{display:flex; align-items:center; justify-content:space-between;}
+  .divider{height:1px; background:var(--line); margin:12px 0;}
+  .btn{border:0; border-radius:10px; padding:9px 14px; font-size:14px; cursor:pointer; background:var(--line); color:var(--ink);}
+  .btn.primary{background:var(--brand); color:#fff;}
+  .btn.ghost{background:var(--card); border:1px solid var(--line); color:var(--sub);}
+  .btn.danger{background:#fff0f0; color:var(--bad); border:1px solid #ffd9d9;}
+  .btn.grow{flex:1;}
+  .btn.sm{padding:7px 10px; font-size:13px;}
+  .btn:active{transform:scale(.98);}
+  .seg{display:flex; background:var(--card); border-radius:12px; padding:4px; box-shadow:var(--shadow); margin-bottom:10px; overflow-x:auto;}
+  .seg button{flex:1; border:0; background:none; padding:9px 0; font-size:13px; color:var(--sub); cursor:pointer; border-radius:9px; white-space:nowrap;}
+  .seg button.active{background:var(--brand2); color:var(--brand); font-weight:600;}
+  .nav{display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:12px;}
+  .nav button{border:0; background:var(--line); width:34px; height:34px; border-radius:9px; font-size:18px; cursor:pointer; color:var(--ink);}
+  .nav button:disabled{opacity:.3;}
+  .nav .navlabel{min-width:140px; text-align:center; font-size:15px; font-weight:600;}
+  .summary{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 14px 6px; margin-bottom:12px; display:grid; grid-template-columns:1fr 1fr; gap:16px 14px;}
+  .tile .num{font-size:22px; font-weight:700; line-height:1.15;}
+  .tile .unit{font-size:12px; color:var(--sub); margin-left:3px; font-weight:400;}
+  .tile .label{font-size:12px; color:var(--sub); margin-top:3px;}
+  .tile .delta{font-size:11px; margin-top:4px; color:var(--sub);}
+  .tile .delta.up{color:var(--ok);}
+  .tile .delta.down{color:var(--bad);}
+  .tile .note{font-size:11px; margin-top:4px; color:var(--sub);}
+  .kpis{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;}
+  .kpi{background:#f7f7f8; border-radius:10px; padding:10px 12px;}
+  .kpi .v{font-size:17px; font-weight:700;}
+  .kpi .k{font-size:12px; color:var(--sub); margin-top:2px;}
+  .stack{display:flex; height:12px; border-radius:6px; overflow:hidden; margin:6px 0 10px; background:var(--line);}
+  .stack span{display:block; height:100%;}
+  .legend{display:flex; flex-wrap:wrap; gap:10px 14px; font-size:12px; color:var(--sub);}
+  .legend i{width:9px; height:9px; border-radius:2px; display:inline-block; margin-right:5px; vertical-align:middle;}
+  .heat{display:flex; gap:3px; overflow-x:auto; padding-bottom:4px;}
+  .heat .col{display:flex; flex-direction:column; gap:3px; flex-shrink:0;}
+  .heat .col .mon{font-size:10px; color:var(--sub); text-align:center; margin-bottom:2px; height:12px;}
+  .heat .cell{width:12px; height:12px; border-radius:3px; background:var(--line);}
+  .heat .wdrow{display:flex; flex-direction:column; gap:3px; font-size:10px; color:var(--sub); padding-top:14px;}
+  .heat .wdrow div{height:12px; line-height:12px;}
+  .heat-legend{display:flex; align-items:center; gap:5px; font-size:11px; color:var(--sub); margin-top:8px; justify-content:flex-end;}
+  .heat-legend .sw{width:11px; height:11px; border-radius:3px;}
+  .rank{display:flex; flex-direction:column; gap:12px;}
+  .rank .row{display:flex; align-items:center; gap:10px;}
+  .rank .pos{width:22px; text-align:center; font-size:14px; font-weight:700; color:var(--sub); flex-shrink:0;}
+  .rank .pos.top{color:var(--brand);}
+  .rank .info{flex:1; min-width:0;}
+  .rank .nm{font-size:14px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .rank .bar{height:6px; background:var(--line); border-radius:3px; margin:6px 0 4px; overflow:hidden;}
+  .rank .bar i{display:block; height:100%; background:var(--brand); border-radius:3px;}
+  .rank .meta{font-size:11px; color:var(--sub);}
+  .plot-wrap{display:flex; gap:8px; align-items:stretch; height:160px; margin-top:6px;}
+  .yaxis{display:flex; flex-direction:column; justify-content:space-between; font-size:10px; color:var(--sub); text-align:right; padding:2px 0; flex-shrink:0; min-width:40px;}
+  .plotbox{flex:1; display:flex; flex-direction:column; min-width:0;}
+  .plot{flex:1; display:flex; align-items:flex-end; gap:4px; position:relative; border-bottom:1px solid var(--line); box-sizing:border-box;}
+  .plot::before{content:""; position:absolute; left:0; right:0; top:0; bottom:0; background:repeating-linear-gradient(to top,transparent 0,transparent calc(25% - 1px),#f2f4f7 calc(25% - 1px),#f2f4f7 25%); pointer-events:none;}
+  .plot .col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; position:relative; min-width:0;}
+  .plot .col .val{font-size:9px; color:var(--ink); margin-bottom:2px; font-weight:600; white-space:nowrap;}
+  .plot .col .bar{width:100%; max-width:26px; background:var(--chart); border-radius:4px 4px 0 0;}
+  .plot-x{display:flex; gap:4px; margin-top:2px;}
+  .plot-x .lab{flex:1; text-align:center; font-size:10px; color:var(--sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .shelf{display:flex; flex-direction:column; gap:12px;}
+  .book{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:14px;}
+  .book .top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .book .nm{font-size:16px; font-weight:700;}
+  .book .tag{font-size:11px; color:var(--sub); border:1px solid var(--line); border-radius:6px; padding:2px 7px; flex-shrink:0;}
+  .book .cur{font-size:11px; color:#fff; background:var(--brand); border-radius:6px; padding:2px 7px; flex-shrink:0;}
+  .progress{height:8px; background:var(--line); border-radius:5px; margin:12px 0 8px; overflow:hidden;}
+  .progress i{display:block; height:100%; background:var(--brand); border-radius:5px;}
+  .stats-line{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:10px;}
+  .eta{font-size:12px; color:var(--sub); margin-top:10px; background:var(--brand2); border-radius:10px; padding:9px 11px; line-height:1.5;}
+  .eta b{color:var(--ink); font-weight:700;}
+  .stats-line .s{text-align:center;}
+  .stats-line .s .v{font-size:14px; font-weight:700;}
+  .stats-line .s .k{font-size:10px; color:var(--sub); margin-top:1px;}
+  .book .ops{display:flex; gap:8px; margin-top:12px;}
+  .timer-card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; text-align:center;}
+  .timer-card .bname{font-size:15px; color:var(--sub); margin-bottom:10px;}
+  .timer-card .clock{font-size:46px; font-weight:300; font-variant-numeric:tabular-nums; letter-spacing:1px; margin:6px 0;}
+  .timer-card .state{font-size:13px; color:var(--sub); margin-bottom:14px;}
+  .timer-card .ctrls{display:flex; gap:10px; justify-content:center;}
+  .timer-card .ctrls .btn{padding:12px 22px; font-size:15px;}
+  .field{margin-bottom:12px;}
+  .field label{display:block; font-size:13px; color:var(--sub); margin-bottom:5px;}
+  .field input, .field select{width:100%; border:1px solid var(--line); border-radius:10px; padding:11px 12px; font-size:15px; background:var(--card); color:var(--ink);}
+  .field input:focus, .field select:focus{outline:none; border-color:var(--brand);}
+  .preview{background:var(--brand2); color:var(--brand); border-radius:10px; padding:10px 12px; font-size:13px; margin-top:8px; text-align:center;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .ver{position:fixed; bottom:54px; left:0; right:0; z-index:20; max-width:760px; margin:0 auto; text-align:center; font-size:10px; color:var(--sub); opacity:.7; pointer-events:none;}
+  .tabbar{position:fixed; bottom:0; left:0; right:0; z-index:20; background:var(--card); border-top:1px solid var(--line); display:flex; max-width:760px; margin:0 auto; padding-bottom:env(safe-area-inset-bottom);}
+  .tabbar button{flex:1; border:0; background:none; padding:15px 0 17px; font-size:15px; color:var(--sub); cursor:pointer;}
+  .tabbar button.active{color:var(--brand); font-weight:700;}
+  .overlay{position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:50; display:flex; align-items:flex-end; justify-content:center;}
+  .sheet{background:var(--card); width:100%; max-width:760px; border-radius:18px 18px 0 0; padding:18px 16px calc(18px + env(safe-area-inset-bottom)); max-height:90vh; overflow-y:auto; animation:up .22s ease;}
+  @keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .sheet h3{margin:0 0 6px; font-size:17px;}
+  .sheet .desc{color:var(--sub); font-size:12px; margin-bottom:14px;}
+  .sheet .foot{display:flex; gap:10px; margin-top:16px;}
+  .toast{position:fixed; left:50%; bottom:96px; transform:translateX(-50%); background:#1c2330; color:#fff; padding:9px 16px; border-radius:999px; font-size:13px; z-index:80; opacity:0; transition:opacity .2s; pointer-events:none;}
+  .toast.show{opacity:1;}
+  .search{width:100%; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:15px; background:var(--card); color:var(--ink); margin:10px 0 2px; -webkit-appearance:none;}
+  .search:focus{outline:none; border-color:var(--brand);}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
+  .chip{border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:13px; background:var(--card); color:var(--sub); cursor:pointer; user-select:none;}
+  .chip.on{background:var(--brand); color:#fff; border-color:var(--brand);}
+  .badge{font-size:11px; border:1px solid var(--line); border-radius:6px; padding:2px 8px; flex-shrink:0; color:var(--ink);}
+  .rev{font-size:12px; color:var(--sub); margin-top:10px; white-space:pre-wrap; word-break:break-word; line-height:1.55; max-height:88px; overflow:hidden;}
+  .field textarea{width:100%; border:1px solid var(--line); border-radius:10px; padding:11px 12px; font-size:15px; background:var(--card); color:var(--ink); resize:vertical; font-family:inherit; line-height:1.5;}
+  .field textarea:focus{outline:none; border-color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="title">读书工作台</div>
+  </header>
+  <main id="view"></main>
+  <div class="tabbar">
+    <button data-tab="shelf" onclick="goTab('shelf')">书架</button>
+    <button data-tab="timer" onclick="goTab('timer')">计时</button>
+    <button data-tab="stats" onclick="goTab('stats')">统计</button>
+    <button data-tab="data" onclick="goTab('data')">数据</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div id="modalRoot"></div>
+<script>
+/* ============ 存储层 ============ */
+const KEY="reading_workbench_v1";
+let state={books:[],currentBookId:null,timer:null};
+let timerTick=null, pendingElapsed=0;
+let statsRange="month", statsType="all", statsOffset=0, chartMetric="time";
+let shelfRating="all", shelfSearch="";
+function load(){
+  try{ const r=localStorage.getItem(KEY); if(r){ state=JSON.parse(r); if(!state.books) state.books=[]; } }catch(e){}
+  state.books.forEach(b=>{ if(!b.sessions) b.sessions=[]; if(b.totalTime==null) b.totalTime=0; if(b.pagesRead==null) b.pagesRead=0; if(!b.type) b.type="paper"; if(b.rating==null) b.rating=null; if(!b.subTags) b.subTags=[]; if(b.review==null) b.review=""; if(b.ratedAt==null) b.ratedAt=null; });
+  // 兼容旧数据：有进度/时长但无阅读记录的书，补一条导入记录，使统计可显示
+  state.books.forEach(b=>{
+    if((b.totalTime>0 || b.pagesRead>0) && b.sessions.length===0){
+      const wpp= b.totalPages>0? b.totalWords/b.totalPages : 0;
+      const dur= b.totalTime||0; const st= b.createdAt || Date.now();
+      b.sessions=[{ id:uid(), start:st, end:st+dur*1000, duration:dur, pages:b.pagesRead, words:Math.round(b.pagesRead*wpp), speed: dur>0?(b.pagesRead*wpp)/(dur/60):0 }];
+    }
+  });
+  if(state.timer && !state.timer.bookId) state.timer=null;
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+/* ============ 工具函数 ============ */
+function $(s){ return document.querySelector(s); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function bookById(id){ return state.books.find(b=>b.id===id); }
+function wordsPerPage(b){ return b.totalPages>0 ? b.totalWords/b.totalPages : 0; }
+function fmtDur(sec){
+  sec=Math.round(sec||0); if(sec<60) return "0秒";
+  const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60);
+  if(h<=0) return m+"分钟";
+  return h+"小时"+ ("0"+m).slice(-2) +"分钟";
+}
+function fmtClock(sec){
+  sec=Math.round(sec||0);
+  const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60);
+  if(h<=0) return m+"分";
+  return h+":"+("0"+m).slice(-2);
+}
+function fmtNum(n){ n=Math.round(n||0); return n.toLocaleString("zh-CN"); }
+function bookAvgSpeed(b){ const min=b.totalTime/60; const w=b.pagesRead*wordsPerPage(b); return min>0 ? w/min : 0; }
+function globalAvgSpeed(){ let words=0,min=0; state.books.forEach(b=>{ words+=b.pagesRead*wordsPerPage(b); min+=b.totalTime/60; }); return min>0? words/min : 0; }
+function bookEta(b){
+  const remain=Math.max(0, b.totalPages-b.pagesRead);
+  if(remain<=0 || b.totalPages<=0) return null;
+  const wpp=wordsPerPage(b);
+  const leftWords=remain*wpp;
+  let spd=bookAvgSpeed(b);
+  if(spd<=0) spd=globalAvgSpeed();
+  if(spd<=0) return null;
+  return leftWords/spd*60;
+}
+function bookWordsRead(b){ return Math.round(b.pagesRead * wordsPerPage(b)); }
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("show"),1600); }
+function startOfDay(d){ const x=new Date(d); x.setHours(0,0,0,0); return x; }
+function endOfDay(d){ const x=new Date(d); x.setHours(23,59,59,999); return x; }
+function endOfMonth(d){ const x=new Date(d.getFullYear(), d.getMonth()+1,0); x.setHours(23,59,59,999); return x; }
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+function bookMatchesFilter(b, tf){ if(tf==="all") return true; if(tf==="ebook") return b.type==="ebook"; if(tf==="paper") return b.type!=="ebook"; return true; }
+
+/* ============ 标签页路由 ============ */
+function goTab(tab){
+  state._tab=tab;
+  document.querySelectorAll(".tabbar button").forEach(b=> b.classList.toggle("active", b.dataset.tab===tab));
+  if(tab==="shelf") renderShelf();
+  else if(tab==="timer") renderTimer();
+  else if(tab==="stats") renderStats();
+  else if(tab==="data") renderData();
+  window.scrollTo(0,0);
+}
+function render(){
+  load();
+  const t=state._tab||"shelf";
+  if(t==="stats") renderStats(); else if(t==="timer") renderTimer(); else if(t==="data") renderData(); else renderShelf();
+  document.querySelectorAll(".tabbar button").forEach(b=> b.classList.toggle("active", b.dataset.tab===t));
+}
+
+/* ============ 书架 ============ */
+function renderShelf(){
+  const v=$("#view");
+  const seg='<div class="seg" style="margin-top:8px">'+[['all','全部'],['good','好看'],['ok','一般'],['bad','难看']].map(([k,l])=>'<button class="'+(shelfRating===k?'active':'')+'" onclick="setShelfRating(\''+k+'\')">'+l+'</button>').join('')+'</div>';
+  v.innerHTML=`<div class="card">
+    <div class="flex-between"><b>我的书架</b><button class="btn primary sm" onclick="openBookForm()">录入新书籍</button></div>
+    <input class="search" id="shelfSearch" placeholder="搜索书名或总结关键字" value="${esc(shelfSearch)}" oninput="shelfSearch=this.value;paintShelfList()">
+    ${seg}
+  </div><div id="shelfList"></div>`;
+  paintShelfList();
+}
+function paintShelfList(){
+  const el=$("#shelfList"); if(!el) return;
+  let list=state.books.slice();
+  if(shelfRating!=="all") list=list.filter(b=>b.rating===shelfRating);
+  const kw=shelfSearch.trim().toLowerCase();
+  if(kw) list=list.filter(b=> (b.title+" "+(b.review||"")+" "+(b.subTags||[]).join(" ")).toLowerCase().indexOf(kw)>=0);
+  if(!state.books.length){ el.innerHTML=`<div class="card empty">书架还是空的，点上方「录入新书籍」开始吧</div>`; return; }
+  if(!list.length){ el.innerHTML=`<div class="card empty">没有符合条件的书</div>`; return; }
+  el.innerHTML='<div class="shelf">'+list.map(bookCard).join('')+'</div>';
+}
+function bookCard(b){
+  const pct= b.totalPages>0 ? Math.min(100, Math.round(b.pagesRead/b.totalPages*100)) : 0;
+  const remain=Math.max(0, b.totalPages-b.pagesRead);
+  const isCur= b.id===state.currentBookId;
+  const rated= b.rating? `<span class="badge">${RATING_META[b.rating].label}</span>`:'';
+  const right= isCur? `<span class="cur">当前读物</span>`:`<span class="tag">${b.type==="ebook"?"电子书":"实体书"}</span>`;
+  const sub= (b.subTags&&b.subTags.length)? `<div class="small muted" style="margin-top:8px">标签：${b.subTags.map(esc).join("、")}</div>`:'';
+  const rev= b.review? `<div class="rev">${esc(b.review)}</div>`:'';
+  const eta= bookEta(b);
+  const etaHtml= eta!=null? `<div class="eta">预计还需 <b>${fmtDur(eta)}</b> 读完（按你的阅读速度估算）</div>`:'';
+  return `<div class="book">
+    <div class="top"><div class="nm">${esc(b.title)}</div><div style="display:flex;gap:6px;align-items:center">${rated}${right}</div></div>
+    <div class="progress"><i style="width:${pct}%"></i></div>
+    <div class="flex-between small"><span>进度 ${pct}%</span><span class="muted">${b.pagesRead}/${b.totalPages} 页</span></div>
+    <div class="stats-line">
+      <div class="s"><div class="v">${b.pagesRead}</div><div class="k">已读页</div></div>
+      <div class="s"><div class="v">${remain}</div><div class="k">剩余页</div></div>
+      <div class="s"><div class="v">${fmtDur(b.totalTime)}</div><div class="k">本书时长</div></div>
+      <div class="s"><div class="v">${fmtNum(Math.round(bookAvgSpeed(b)))}</div><div class="k">字/分</div></div>
+    </div>
+    ${rev}${sub}${etaHtml}
+    <div class="ops">
+      <button class="btn ghost" onclick="openRatingForm('${b.id}')">评价</button>
+      ${isCur?`<button class="btn primary grow" onclick="goTab('timer')">开始计时</button>`:`<button class="btn grow" onclick="setCurrent('${b.id}')">设为当前</button>`}
+      <button class="btn ghost" onclick="openBookForm('${b.id}')">编辑</button>
+      <button class="btn ghost" onclick="confirmDel('${b.id}')">删除</button>
+    </div>
+  </div>`;
+}
+function setShelfRating(k){ shelfRating=k; paintShelfList(); }
+
+/* ============ 评价 / 总结 ============ */
+const RATING_META={
+  good:{label:"好看",sub:["多看","看一遍就够了","强烈推荐","想收藏"]},
+  ok:{label:"一般",sub:["看一遍就够了","不推荐","凑合看完"]},
+  bad:{label:"难看",sub:["浪费时间","不推荐","弃了可惜"]}
+};
+let draftRating=null, draftSub=[];
+function openRatingForm(id){
+  const b=bookById(id); if(!b) return;
+  draftRating=b.rating||null; draftSub=(b.subTags||[]).slice();
+  const seg='<div class="seg" id="ratingSeg">'+['good','ok','bad'].map(k=>'<button class="'+(draftRating===k?'active':'')+'" onclick="pickRating(\''+k+'\')">'+RATING_META[k].label+'</button>').join('')+'</div>';
+  const html=`<h3>评价《${esc(b.title)}》</h3>
+    <div class="field"><label>总体评价</label>${seg}</div>
+    <div class="field"><label>更多标签（可多选）</label><div class="chips" id="subChips">${renderSubChips(draftRating,draftSub)}</div></div>
+    <div class="field"><label>读后感 / 总结</label><textarea id="f_review" rows="5" placeholder="写点什么，比如：大女主成长线很爽、文笔一般……">${esc(b.review||"")}</textarea></div>
+    <div class="foot"><button class="btn ghost grow" onclick="closeModal()">取消</button><button class="btn primary grow" onclick="saveRating('${id}')">保存</button></div>`;
+  openModal(html);
+}
+function renderSubChips(rating, sel){
+  if(!rating) return '<span class="small muted">先选择上方总体评价</span>';
+  return RATING_META[rating].sub.map(s=>'<span class="chip '+(sel.indexOf(s)>=0?'on':'')+'" onclick="toggleSub(\''+s+'\')">'+esc(s)+'</span>').join('');
+}
+function pickRating(k){
+  draftRating=k;
+  draftSub=draftSub.filter(t=> RATING_META[k].sub.indexOf(t)>=0);
+  const seg=$("#ratingSeg"); if(seg) seg.innerHTML=['good','ok','bad'].map(kk=>'<button class="'+(draftRating===kk?'active':'')+'" onclick="pickRating(\''+kk+'\')">'+RATING_META[kk].label+'</button>').join('');
+  const c=$("#subChips"); if(c) c.innerHTML=renderSubChips(draftRating,draftSub);
+}
+function toggleSub(s){ const i=draftSub.indexOf(s); if(i>=0) draftSub.splice(i,1); else draftSub.push(s); const c=$("#subChips"); if(c) c.innerHTML=renderSubChips(draftRating,draftSub); }
+function saveRating(id){
+  const b=bookById(id); if(!b) return;
+  const review=$("#f_review")? $("#f_review").value.trim():"";
+  b.rating= draftRating||null;
+  b.subTags= draftRating? draftSub.slice():[];
+  b.review=review;
+  b.ratedAt= b.rating? Date.now(): b.ratedAt;
+  save(); closeModal(); renderShelf(); toast("已保存评价");
+}
+function setCurrent(id){ state.currentBookId=id; save(); renderShelf(); toast("已切换当前读物"); }
+function delBook(id){
+  state.books=state.books.filter(b=>b.id!==id);
+  if(state.currentBookId===id) state.currentBookId= state.books.length? state.books[0].id : null;
+  save(); renderShelf(); toast("已删除");
+}
+function confirmDel(id){
+  const b=bookById(id);
+  openModal(`<h3>删除这本书</h3><div class="desc">《${esc(b?b.title:"")}》及其所有阅读记录将被删除，此操作不可恢复。</div>
+    <div class="foot"><button class="btn ghost grow" onclick="closeModal()">取消</button><button class="btn danger grow" onclick="delBook('${id}')">确认删除</button></div>`);
+}
+
+/* ============ 书籍录入 / 编辑表单 ============ */
+function openBookForm(id){
+  const b= id? bookById(id): null;
+  const html=`<h3>${b?"编辑书籍":"录入新书籍"}</h3>
+    <div class="field"><label>书名</label><input id="f_title" placeholder="例如：百年孤独" value="${b?esc(b.title):""}"></div>
+    <div class="row2">
+      <div class="field"><label>总页数</label><input id="f_pages" type="number" inputmode="numeric" placeholder="0" value="${b?b.totalPages:""}"></div>
+      <div class="field"><label>全书总字数</label><input id="f_words" type="number" inputmode="numeric" placeholder="0" value="${b?b.totalWords:""}"></div>
+    </div>
+    <div class="field"><label>类型</label>
+      <select id="f_type">
+        <option value="paper" ${b&&b.type!=="ebook"?"selected":""}>实体书</option>
+        <option value="ebook" ${b&&b.type==="ebook"?"selected":""}>电子书</option>
+      </select>
+    </div>
+    <div class="divider"></div>
+    <div class="desc">若是已有阅读进度的书，可在此导入历史进度：</div>
+    <div class="row2">
+      <div class="field"><label>已读页数</label><input id="f_pagesRead" type="number" inputmode="numeric" placeholder="0" value="${b?b.pagesRead:""}"></div>
+      <div class="field"><label>累计时长（分钟）</label><input id="f_histMin" type="number" inputmode="numeric" placeholder="0" value="${b?Math.round(b.totalTime/60):""}"></div>
+    </div>
+    <div class="foot">
+      <button class="btn ghost grow" onclick="closeModal()">取消</button>
+      <button class="btn primary grow" onclick="saveBook('${id||""}')">保存</button>
+    </div>`;
+  openModal(html);
+}
+function saveBook(id){
+  const title=$("#f_title").value.trim();
+  const pages=Math.max(0, parseInt($("#f_pages").value)||0);
+  const words=Math.max(0, parseInt($("#f_words").value)||0);
+  const type=$("#f_type").value;
+  const pagesRead=Math.max(0, parseInt($("#f_pagesRead").value)||0);
+  const histMin=Math.max(0, parseInt($("#f_histMin").value)||0);
+  if(!title){ toast("请填写书名"); return; }
+  if(pages<=0){ toast("请填写有效的总页数"); return; }
+  if(words<=0){ toast("请填写有效的总字数"); return; }
+  if(pagesRead>pages){ toast("已读页数不能超过总页数"); return; }
+  if(id){
+    const b=bookById(id);
+    b.title=title; b.totalPages=pages; b.totalWords=words; b.type=type;
+    // 已有真实计时记录的书，进度由记录累加，导入字段不覆盖
+    if(b.sessions.length>0){
+      let pr=0, tt=0; b.sessions.forEach(s=>{ pr+=s.pages; tt+=s.duration; });
+      b.pagesRead=Math.min(b.totalPages, pr);
+      b.totalTime=tt;
+    } else {
+      b.pagesRead=pagesRead; b.totalTime=histMin*60;
+    }
+    save(); closeModal(); renderShelf(); toast("已保存");
+  } else {
+    const b={ id:uid(), title, totalPages:pages, totalWords:words, type,
+      pagesRead, totalTime:histMin*60, sessions:[], createdAt:Date.now() };
+    // 录入时若填了导入进度，按创建时间生成一条“导入”记录，使历史时长/字数进入统计
+    if(pagesRead>0 || histMin>0){
+      const wpp= words>0&&pages>0? words/pages : 0;
+      const dur= histMin*60;
+      const st=b.createdAt;
+      b.sessions.push({ id:uid(), start:st, end:st+dur*1000, duration:dur,
+        pages:pagesRead, words:Math.round(pagesRead*wpp), speed:dur>0?(pagesRead*wpp)/(dur/60):0 });
+    }
+    state.books.push(b);
+    if(!state.currentBookId) state.currentBookId=b.id;
+    save(); closeModal(); renderShelf(); toast("已录入");
+  }
+}
+
+/* ============ 计时 / 测速 ============ */
+function renderTimer(){
+  const v=$("#view");
+  const cur= bookById(state.currentBookId);
+  if(!cur){
+    v.innerHTML=`<div class="card empty">书架还没有书，请先到「书架」录入一本书。</div>`;
+    return;
+  }
+  const t=state.timer;
+  if(t && t.bookId===cur.id){
+    const elapsed=currentElapsed();
+    const running= !t.paused;
+    v.innerHTML=`<div class="card timer-card">
+      <div class="bname">正在读：《${esc(cur.title)}》</div>
+      <div class="clock" id="clk">${fmtClock(elapsed)}</div>
+      <div class="state">${running?"计时中":"已暂停"} · 起始页 ${t.startPage}</div>
+      <div class="ctrls">
+        ${running?`<button class="btn" onclick="pauseTimer()">暂停</button>`:`<button class="btn primary" onclick="resumeTimer()">继续</button>`}
+        <button class="btn" onclick="confirmCancel()">取消</button>
+        <button class="btn primary" onclick="stopTimer()">结束</button>
+      </div>
+    </div>
+    <div class="card small muted">结束计时后填写终止页码，系统自动计算阅读页数与速度（字/分钟）。</div>`;
+    return;
+  }
+  if(t && t.bookId!==cur.id){
+    const ob=bookById(t.bookId);
+    v.innerHTML=`<div class="card empty">《${esc(ob?ob.title:"")}》的计时仍在进行中，请先到该书结束或取消计时。</div>`;
+    return;
+  }
+  const sp= cur.totalPages>0 ? cur.pagesRead : 0;
+  v.innerHTML=`<div class="card">
+    <div class="flex-between" style="margin-bottom:12px"><b>开始计时</b><span class="small muted">《${esc(cur.title)}》</span></div>
+    <div class="field"><label>起始页码</label><input id="startPage" type="number" inputmode="numeric" value="${sp}" placeholder="例如 1"></div>
+    <div class="preview">将从第 ${sp} 页开始计时（已读进度）</div>
+    ${(()=>{ const e=bookEta(cur); return e!=null? `<div class="eta" style="margin-top:12px">按你的阅读速度，预计还需 <b>${fmtDur(e)}</b> 读完</div>`:''; })()}
+    <div style="margin-top:14px"><button class="btn primary grow" style="width:100%;padding:13px" onclick="startTimer()">开始计时</button></div>
+  </div>
+  <div class="card small muted">提示：起始页码默认等于当前已读页数，可手动改成从某页重读；结束页码必须大于起始页码。</div>`;
+}
+function currentElapsed(){
+  const t=state.timer; if(!t) return 0;
+  return t.paused ? t.accumulated : t.accumulated + (Date.now()-t.startTs)/1000;
+}
+function startTick(){ stopTick(); timerTick=setInterval(()=>{ const c=$("#clk"); if(c) c.textContent=fmtClock(currentElapsed()); },1000); }
+function stopTick(){ if(timerTick){ clearInterval(timerTick); timerTick=null; } }
+function startTimer(){
+  const sp=Math.max(1, parseInt($("#startPage").value)||0);
+  state.timer={ bookId:state.currentBookId, startPage:sp, startTs:Date.now(), accumulated:0, paused:false };
+  save(); startTick(); renderTimer();
+}
+function pauseTimer(){ const t=state.timer; if(!t) return; t.accumulated=currentElapsed(); t.paused=true; save(); stopTick(); renderTimer(); }
+function resumeTimer(){ const t=state.timer; if(!t) return; t.startTs=Date.now(); t.paused=false; save(); startTick(); renderTimer(); }
+function cancelTimer(){ if(state.timer){ if(!confirm("确定取消本次计时？已计时间不计入记录。")) return; } state.timer=null; save(); stopTick(); renderTimer(); toast("已取消"); }
+function confirmCancel(){ cancelTimer(); }
+function stopTimer(){
+  const t=state.timer; if(!t) return;
+  pendingElapsed=currentElapsed();
+  const pe=Math.round(pendingElapsed);
+  openModal(`<h3>结束本次阅读</h3>
+    <div class="field"><label>终止页码</label><input id="endPage" type="number" inputmode="numeric" placeholder="必须大于 ${t.startPage}" oninput="updatePreview()"></div>
+    <div id="pv" class="preview">已计时 ${fmtClock(pe)}，填写终止页码后自动计算阅读页数</div>
+    <div class="foot"><button class="btn ghost grow" onclick="closeModal();if(state.timer)renderTimer()">取消</button><button class="btn primary grow" onclick="doCommit()">保存记录</button></div>`);
+}
+function updatePreview(){
+  const t=state.timer; if(!t) return;
+  const ep=parseInt($("#endPage").value)||0;
+  const pages=ep-t.startPage;
+  const pv=$("#pv");
+  if(pages<=0){ pv.textContent="终止页码需大于起始页码 "+t.startPage; return; }
+  const wpp=wordsPerPage(bookById(t.bookId));
+  const words=pages*wpp;
+  const speed= pendingElapsed>0? words/(pendingElapsed/60) : 0;
+  pv.innerHTML=`本次阅读 <b>${pages}</b> 页 · 约 <b>${fmtNum(Math.round(words))}</b> 字 · 速度 <b>${fmtNum(Math.round(speed))}</b> 字/分钟`;
+}
+function doCommit(){
+  const t=state.timer; if(!t) return;
+  const ep=parseInt($("#endPage").value)||0;
+  const pages=ep-t.startPage;
+  if(pages<=0){ toast("终止页码需大于起始页码"); return; }
+  const book=bookById(t.bookId); if(!book){ closeModal(); state.timer=null; return; }
+  const elapsed=pendingElapsed;
+  const wpp=wordsPerPage(book);
+  const words=pages*wpp;
+  const speed= elapsed>0? words/(elapsed/60) : 0;
+  const sess={ id:uid(), start:t.startTs, end:Date.now(), duration:elapsed, pages, words, speed };
+  book.sessions.push(sess);
+  book.pagesRead=Math.min(book.totalPages, book.pagesRead+pages);
+  book.totalTime=book.totalTime+elapsed;
+  state.timer=null;
+  save(); stopTick(); closeModal();
+  if(book.pagesRead>=book.totalPages && !book.rating){ goTab("shelf"); openRatingForm(book.id); toast("读完啦，来评价一下"); }
+  else { renderTimer(); toast("已记录本次阅读"); }
+}
+
+/* ============ 统计 ============ */
+const WD=['周日','周一','周二','周三','周四','周五','周六'];
+function fmtMD(d){ return (d.getMonth()+1)+'/'+d.getDate(); }
+function getWindow(range, offset){
+  const now=new Date(); offset=offset||0;
+  if(range==='day'){ const d=addDays(now,-offset); return {from:startOfDay(d), to:endOfDay(d), label:fmtMD(d)+' '+WD[d.getDay()]}; }
+  if(range==='week'){ const end=addDays(now,-7*offset); const s=addDays(startOfDay(end),-6); return {from:startOfDay(s), to:endOfDay(end), label:fmtMD(s)+' 至 '+fmtMD(end)}; }
+  if(range==='month'){ const d=new Date(now.getFullYear(), now.getMonth()-offset, 1); return {from:new Date(d.getFullYear(),d.getMonth(),1), to:endOfMonth(d), label:d.getFullYear()+'年'+(d.getMonth()+1)+'月'}; }
+  if(range==='year'){ const y=now.getFullYear()-offset; return {from:new Date(y,0,1), to:new Date(y,11,31,23,59,59), label:y+'年'}; }
+  return {from:new Date(0), to:now, label:'全部'};
+}
+function windowSessions(win, tf){
+  const out=[];
+  state.books.forEach(b=>{
+    if(!bookMatchesFilter(b,tf)) return;
+    b.sessions.forEach(s=>{ const st=new Date(s.start), en=new Date(s.end); if(en>=win.from && st<=win.to) out.push(Object.assign({bookId:b.id, wpp:wordsPerPage(b)}, s)); });
+  });
+  return out;
+}
+function periodOf(h){ if(h<6) return '凌晨'; if(h<12) return '上午'; if(h<18) return '下午'; return '晚上'; }
+function computePeriod(win, tf){
+  const sess=windowSessions(win,tf);
+  const durSec=sess.reduce((a,s)=>a+s.duration,0);
+  const days=new Set(sess.map(s=>startOfDay(new Date(s.end)).getTime())).size;
+  const words=sess.reduce((a,s)=>a+(s.words!=null?s.words:s.pages*(s.wpp||0)),0);
+  const min=durSec/60;
+  const speed= min>0? words/min : 0;
+  const per={'凌晨':0,'上午':0,'下午':0,'晚上':0};
+  const hourCount={}; let nightSec=0,startSecSum=0,startCount=0;
+  sess.forEach(s=>{ const st=new Date(s.start); const h=st.getHours(); per[periodOf(h)]+=s.duration; hourCount[h]=(hourCount[h]||0)+1; startSecSum+=h*3600+st.getMinutes()*60+st.getSeconds(); startCount++; if(h<6||h>=18) nightSec+=s.duration; });
+  let favHour=null,favN=0; for(const h in hourCount){ if(hourCount[h]>favN){favN=hourCount[h]; favHour=+h;} }
+  let favPer='凌晨',favPv=-1; ['凌晨','上午','下午','晚上'].forEach(p=>{ if(per[p]>favPv){favPv=per[p]; favPer=p;} });
+  const avgStart= startCount>0? startSecSum/startCount : 0;
+  const nightRatio= durSec>0? nightSec/durSec : 0;
+  return {sess,durSec,days,words,speed,per,favHour,favPer,avgStart,nightRatio};
+}
+function buildBuckets(win, range, tf){
+  const now=new Date(); let bs=[], match;
+  if(range==='day'){
+    for(let h=0;h<24;h++) bs.push({label:h+'时',key:h,time:0,words:0});
+    match=(s,b)=>{ const dt=new Date(s.end); return dt.getFullYear()===win.from.getFullYear()&&dt.getMonth()===win.from.getMonth()&&dt.getDate()===win.from.getDate()&&dt.getHours()===b.key; };
+  } else if(range==='week'){
+    for(let i=0;i<7;i++){ const d=addDays(win.from,i); bs.push({label:(d.getMonth()+1)+'/'+d.getDate(),key:startOfDay(d).getTime(),time:0,words:0}); }
+    match=(s,b)=> startOfDay(new Date(s.end)).getTime()===b.key;
+  } else if(range==='month'){
+    const y=win.from.getFullYear(), m=win.from.getMonth(); const dn=new Date(y,m+1,0).getDate();
+    for(let d=1;d<=dn;d++) bs.push({label:''+d,key:d,time:0,words:0});
+    match=(s,b)=>{ const dt=new Date(s.end); return dt.getFullYear()===y&&dt.getMonth()===m&&dt.getDate()===b.key; };
+  } else if(range==='year'){
+    const y=win.from.getFullYear();
+    for(let m=0;m<12;m++) bs.push({label:(m+1)+'月',key:m,time:0,words:0});
+    match=(s,b)=>{ const dt=new Date(s.end); return dt.getFullYear()===y&&dt.getMonth()===b.key; };
+  } else {
+    let minT=Date.now(); const all=windowSessions({from:new Date(0),to:now},tf); if(all.length) minT=Math.min(...all.map(s=>new Date(s.start).getTime()));
+    const min=new Date(minT); let y=min.getFullYear(),m=min.getMonth(); const end=new Date(now.getFullYear(),now.getMonth()+1,0);
+    while(y<end.getFullYear()||(y===end.getFullYear()&&m<=end.getMonth())){ bs.push({label:(m+1)+'月',key:y+'-'+m,time:0,words:0}); m++; if(m>11){m=0;y++;} }
+    match=(s,b)=>{ const dt=new Date(s.end); return dt.getFullYear()+'-'+dt.getMonth()===b.key; };
+  }
+  windowSessions(win,tf).forEach(s=>{ const w=s.words!=null?s.words:s.pages*(s.wpp||0); bs.forEach(b=>{ if(match(s,b)){ b.time+=s.duration; b.words+=w; } }); });
+  return bs;
+}
+function tileTime(sec){ sec=Math.round(sec); if(sec<60) return {n:'0',u:'秒'}; const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60); if(h>0) return {n:h+'小时'+('0'+m).slice(-2)+'分',u:''}; return {n:''+m,u:'分钟'}; }
+function wordsTile(w){ if(w>=10000) return {n:(w/10000).toFixed(1),u:'万字'}; return {n:fmtNum(Math.round(w)),u:'字'}; }
+function deltaHtml(curr, prev, fmt){ if(prev==null) return '<span class="delta">— 无对比</span>'; const d=curr-prev; if(d>0) return '<span class="delta up">↑ '+fmt(d)+'</span>'; if(d<0) return '<span class="delta down">↓ '+fmt(-d)+'</span>'; return '<span class="delta">— 持平</span>'; }
+function metricVal(b, metric){ if(metric==='time') return b.time/60; if(metric==='words') return b.words; return b.time>0? b.words/(b.time/60):0; }
+function fmtMetric(v, metric){ if(metric==='time') return fmtNum(Math.round(v)); if(metric==='words') return v>=10000? (v/10000).toFixed(1)+'万' : fmtNum(Math.round(v)); return fmtNum(Math.round(v)); }
+function fmtAxis(v, metric){ if(metric==='time') return v>=60? (v/60).toFixed(v>=600?0:1)+'时' : Math.round(v)+'分'; if(metric==='words') return v>=10000? (v/10000).toFixed(1)+'万' : Math.round(v)+''; return Math.round(v)+''; }
+function renderHeatmap(win, tf){
+  const dayMap={};
+  windowSessions(win,tf).forEach(s=>{ const d=startOfDay(new Date(s.end)).getTime(); dayMap[d]=(dayMap[d]||0)+s.duration; });
+  const start=startOfDay(win.from), end=startOfDay(win.to);
+  function mondayOf(d){ const x=new Date(d); const day=(x.getDay()+6)%7; x.setDate(x.getDate()-day); x.setHours(0,0,0,0); return x; }
+  let wk=mondayOf(start); const weeks=[];
+  while(wk<=end){ const days=[]; for(let i=0;i<7;i++){ const dd=new Date(wk); dd.setDate(wk.getDate()+i); days.push(dd); } weeks.push(days); wk=new Date(wk); wk.setDate(wk.getDate()+7); }
+  if(!weeks.length) return '<div class="empty">该范围内无阅读记录</div>';
+  const maxSec=Math.max(1, ...Object.values(dayMap));
+  const wd=['一','二','三','四','五','六','日']; let lastMon=-1;
+  const cols=weeks.map(days=>{
+    const mon=days[0]; let monLab=''; if(mon.getMonth()!==lastMon){ monLab=(mon.getMonth()+1)+'月'; lastMon=mon.getMonth(); }
+    const cells=days.map(dt=>{ const key=startOfDay(dt).getTime(); const sec=dayMap[key]||0; let lvl=0; if(sec>0) lvl=1+Math.floor(sec/maxSec*4); const bg= lvl===0? 'var(--line)' : 'rgba(58,109,240,'+(0.25+lvl*0.18)+')'; return '<div class="cell" style="background:'+bg+'" title="'+(dt.getMonth()+1)+'月'+dt.getDate()+'日 '+fmtDur(sec)+'"></div>'; }).join('');
+    return '<div class="col"><div class="mon">'+monLab+'</div>'+cells+'</div>';
+  }).join('');
+  const wdrow='<div class="wdrow">'+wd.map(w=>'<div>'+w+'</div>').join('')+'</div>';
+  return '<div class="heat">'+wdrow+cols+'</div><div class="heat-legend">少 <span class="sw" style="background:var(--line)"></span><span class="sw" style="background:rgba(58,109,240,.43)"></span><span class="sw" style="background:rgba(58,109,240,.97)"></span> 多</div>';
+}
+function renderChart(win, range, tf, metric){
+  const bs=buildBuckets(win, range, tf);
+  const vals=bs.map(b=>metricVal(b,metric));
+  const realMax=Math.max(1,...vals);
+  const ticks=[1,0.75,0.5,0.25,0].map(f=>({v:realMax*f, pct:f*100}));
+  const yaxis=ticks.map(t=>'<div>'+fmtAxis(t.v,metric)+'</div>').join('');
+  const plotInner=bs.map((b,i)=>{ const v=vals[i]; const h= realMax>0? v/realMax*100:0; const disp= v>0? '<div class="val">'+fmtMetric(v,metric)+'</div>':'<div class="val"></div>'; return '<div class="col">'+disp+'<div class="bar" style="height:'+h+'%"></div></div>'; }).join('');
+  const xlab=bs.map(b=>'<div class="lab">'+b.label+'</div>').join('');
+  return '<div class="plot-wrap"><div class="yaxis">'+yaxis+'</div><div class="plotbox"><div class="plot">'+plotInner+'</div></div></div><div class="plot-x">'+xlab+'</div>';
+}
+function renderRanking(win, tf){
+  const arr= state.books.filter(b=>bookMatchesFilter(b,tf)).map(b=>{
+    const sess=b.sessions.filter(s=> new Date(s.end)>=win.from && new Date(s.start)<=win.to);
+    const time=sess.reduce((a,s)=>a+s.duration,0);
+    const words=sess.reduce((a,s)=>a+(s.words!=null?s.words:s.pages*wordsPerPage(b)),0);
+    return {title:b.title, time, words, pct: b.totalPages>0? b.pagesRead/b.totalPages:0};
+  }).filter(x=>x.time>0).sort((a,b)=>b.time-a.time).slice(0,10);
+  if(!arr.length) return '<div class="empty">该范围内还没有阅读记录</div>';
+  const max=arr[0].time;
+  return '<div class="rank">'+arr.map((x,i)=>'<div class="row"><div class="pos '+(i<3?'top':'')+'">'+(i+1)+'</div><div class="info"><div class="nm">'+esc(x.title)+'</div><div class="bar"><i style="width:'+(max>0?x.time/max*100:0)+'%"></i></div><div class="meta">'+fmtDur(x.time)+' · '+fmtNum(Math.round(x.words))+' 字 · 进度 '+Math.round(x.pct*100)+'%</div></div></div>').join('')+'</div>';
+}
+function renderStats(){
+  const v=$("#view");
+  const range=statsRange, tf=statsType, offset=statsOffset;
+  const win=getWindow(range, offset);
+  const cur=computePeriod(win, tf);
+  const showDelta= range!=='all';
+  const prev= showDelta? computePeriod(getWindow(range, offset+1), tf): null;
+  const typeSeg='<div class="seg">'+[['all','全部'],['ebook','电子书'],['paper','实体书']].map(([k,l])=>'<button class="'+(tf===k?'active':'')+'" onclick="setType(\''+k+'\')">'+l+'</button>').join('')+'</div>';
+  const rangeSeg='<div class="seg">'+[['day','日'],['week','周'],['month','月'],['year','年'],['all','总']].map(([k,l])=>'<button class="'+(range===k?'active':'')+'" onclick="setRange(\''+k+'\')">'+l+'</button>').join('')+'</div>';
+  const navHtml = range==='all'
+    ? '<div class="nav"><div class="navlabel">'+esc(win.label)+'</div></div>'
+    : '<div class="nav"><button onclick="shiftOffset(1)">‹</button><div class="navlabel">'+esc(win.label)+'</div><button '+(offset===0?'disabled':'')+' onclick="shiftOffset(-1)">›</button></div>';
+  const active= state.books.filter(b=>bookMatchesFilter(b,tf)&&b.totalPages>0&&b.pagesRead>0&&b.pagesRead<b.totalPages).length;
+  const finished= state.books.filter(b=>bookMatchesFilter(b,tf)&&b.totalPages>0&&b.pagesRead>=b.totalPages).length;
+  const rGood= state.books.filter(b=>bookMatchesFilter(b,tf)&&b.rating==="good").length;
+  const rOk= state.books.filter(b=>bookMatchesFilter(b,tf)&&b.rating==="ok").length;
+  const rBad= state.books.filter(b=>bookMatchesFilter(b,tf)&&b.rating==="bad").length;
+  const ratedCard='<div class="card"><div class="flex-between"><b>评价分布</b><button class="btn ghost sm" onclick="goTab(\'shelf\')">去书架筛选</button></div><div class="legend" style="justify-content:space-around;margin-top:6px"><span><i style="background:var(--ink)"></i>好看 '+rGood+'</span><span><i style="background:var(--line)"></i>一般 '+rOk+'</span><span><i style="background:var(--sub)"></i>难看 '+rBad+'</span></div></div>';
+  const tt=tileTime(cur.durSec), wt=wordsTile(cur.words);
+  const tiles=[
+    {n:tt.n, u:tt.u, l:'阅读时间', d: deltaHtml(cur.durSec, prev?prev.durSec:null, d=>fmtDur(d))},
+    {n:cur.days, u:'天', l:'阅读天数', d: deltaHtml(cur.days, prev?prev.days:null, d=>d+'天')},
+    {n:wt.n, u:wt.u, l:'阅读字数', d: deltaHtml(cur.words, prev?prev.words:null, d=>fmtNum(d))},
+    {n:fmtNum(Math.round(cur.speed)), u:'字/分', l:'阅读速度', d: deltaHtml(cur.speed, prev?prev.speed:null, d=>fmtNum(Math.round(d)))},
+    {n:active, u:'本', l:'在读书籍', note:'当前'},
+    {n:finished, u:'本', l:'读完书籍', note:'当前'}
+  ];
+  const tilesHtml='<div class="summary">'+tiles.map(t=>'<div class="tile"><div class="num">'+t.n+(t.u?'<span class="unit">'+t.u+'</span>':'')+'</div><div class="label">'+t.l+'</div>'+(t.d?t.d:(t.note?'<div class="note">'+t.note+'</div>':''))+'</div>').join('')+'</div>';
+  const hasData= cur.days>0;
+  const favHour= hasData? (cur.favHour==null?'--':cur.favHour+':00') : '--';
+  const favPer= hasData? cur.favPer : '--';
+  const avgStart= hasData? fmtClock(cur.avgStart) : '--';
+  const night= hasData? Math.round(cur.nightRatio*100)+'%' : '--';
+  const kpis='<div class="kpis"><div class="kpi"><div class="v">'+favHour+'</div><div class="k">最常阅读时刻</div></div><div class="kpi"><div class="v">'+favPer+'</div><div class="k">最常时段</div></div><div class="kpi"><div class="v">'+avgStart+'</div><div class="k">平均开始时间</div></div><div class="kpi"><div class="v">'+night+'</div><div class="k">夜间占比</div></div></div>';
+  const perOrder=['凌晨','上午','下午','晚上'];
+  const perColors={'凌晨':'#5b67d6','上午':'#3a6df0','下午':'#34b3a0','晚上':'#8b5cf6'};
+  const perTotal= perOrder.reduce((a,p)=>a+cur.per[p],0)||1;
+  const stack='<div class="stack">'+perOrder.map(p=>'<span style="width:'+(cur.per[p]/perTotal*100)+'%;background:'+perColors[p]+'"></span>').join('')+'</div>';
+  const legend='<div class="legend">'+perOrder.map(p=>'<span><i style="background:'+perColors[p]+'"></i>'+p+' '+fmtDur(cur.per[p])+'</span>').join('')+'</div>';
+  const metricSeg='<div class="seg" style="margin-bottom:8px">'+[['time','阅读时间'],['words','阅读字数'],['speed','阅读速度']].map(([k,l])=>'<button class="'+(chartMetric===k?'active':'')+'" onclick="setMetric(\''+k+'\')">'+l+'</button>').join('')+'</div>';
+  const unitLab= chartMetric==='time'?'分钟':(chartMetric==='words'?'万字':'字/分钟');
+  v.innerHTML =
+    typeSeg + rangeSeg + navHtml + tilesHtml + ratedCard +
+    '<div class="card"><h3>阅读时段</h3>'+kpis+'</div>' +
+    '<div class="card"><h3>时段占比</h3>'+stack+legend+'</div>' +
+    '<div class="card"><h3>阅读热力图</h3><div class="small muted" style="margin-bottom:8px">色块越深表示该日阅读越多</div>'+renderHeatmap(win,tf)+'</div>' +
+    '<div class="card"><h3>阅读时长排行榜</h3><div class="small muted" style="margin-bottom:10px">按所选范围与类型统计</div>'+renderRanking(win,tf)+'</div>' +
+    '<div class="card"><div class="head"><b>阅读趋势</b><span class="right">单位：'+unitLab+'</span></div>'+metricSeg+renderChart(win,range,tf,chartMetric)+'</div>';
+}
+function setRange(r){ statsRange=r; statsOffset=0; renderStats(); }
+function setType(t){ statsType=t; renderStats(); }
+function shiftOffset(d){ statsOffset=Math.max(0,statsOffset+d); renderStats(); }
+function setMetric(m){ chartMetric=m; renderStats(); }
+
+/* ============ 数据：导入 / 导出 / 备份 ============ */
+function renderData(){
+  const v=$("#view");
+  const totalBooks=state.books.length;
+  const totalSessions= state.books.reduce((a,b)=>a+b.sessions.length,0);
+  v.innerHTML=`<div class="card">
+    <h3>数据备份</h3>
+    <div class="field"><label>当前数据量</label><div class="small">书籍 ${totalBooks} 本 · 阅读记录 ${totalSessions} 条</div></div>
+    <div style="display:flex;gap:10px">
+      <button class="btn primary grow" onclick="exportData()">导出备份</button>
+      <button class="btn grow" onclick="importData()">导入备份</button>
+    </div>
+    <input type="file" id="impFile" accept="application/json" style="display:none" onchange="handleImportFile(event)">
+    <div class="divider"></div>
+    <button class="btn danger grow" onclick="resetAll()">清空全部数据</button>
+  </div>
+  <div class="card small muted">提示：导入备份会覆盖当前全部数据，且无法撤销。导入前可先导出一份作为安全副本。</div>`;
+}
+function exportData(){
+  const data=JSON.stringify(state, null, 2);
+  const blob=new Blob([data], {type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  const d=new Date();
+  a.href=url; a.download="读书工作台备份_"+d.getFullYear()+("0"+(d.getMonth()+1)).slice(-2)+("0"+d.getDate()).slice(-2)+".json";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast("已导出备份");
+}
+function importData(){ $("#impFile").click(); }
+function handleImportFile(e){
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    try{
+      const obj=JSON.parse(ev.target.result);
+      if(!obj || !Array.isArray(obj.books)){ toast("文件格式不正确"); return; }
+      pendingImport=obj; confirmImport();
+    }catch(err){ toast("解析失败，文件可能已损坏"); }
+  };
+  reader.readAsText(file);
+  e.target.value="";
+}
+let pendingImport=null;
+function confirmImport(){
+  const obj=pendingImport; if(!obj) return;
+  const n=obj.books.length;
+  openModal(`<h3>导入备份</h3><div class="desc">将用备份中的 ${n} 本书覆盖当前全部数据，此操作不可撤销。</div>
+    <div class="foot"><button class="btn ghost grow" onclick="closeModal();pendingImport=null">取消</button><button class="btn danger grow" onclick="doImport()">确认覆盖</button></div>`);
+}
+function doImport(){
+  const obj=pendingImport; if(!obj) return;
+  state=obj; if(!state.books) state.books=[]; if(!state.currentBookId) state.currentBookId= state.books.length?state.books[0].id:null;
+  state.books.forEach(b=>{ if(!b.sessions) b.sessions=[]; if(b.totalTime==null) b.totalTime=0; if(b.pagesRead==null) b.pagesRead=0; if(!b.type) b.type="paper"; if(b.rating==null) b.rating=null; if(!b.subTags) b.subTags=[]; if(b.review==null) b.review=""; if(b.ratedAt==null) b.ratedAt=null; });
+  state.timer=null; pendingImport=null;
+  save(); closeModal(); render(); toast("已导入备份");
+}
+function resetAll(){
+  openModal(`<h3>清空全部数据</h3><div class="desc">此操作不可恢复，建议先「导出备份」。</div>
+    <div class="foot"><button class="btn ghost grow" onclick="closeModal()">取消</button><button class="btn danger grow" onclick="confirmReset()">确认清空</button></div>`);
+}
+function confirmReset(){
+  state={books:[],currentBookId:null,timer:null};
+  save(); closeModal(); render(); toast("已清空");
+}
+
+/* ============ 弹窗 ============ */
+function openModal(html){
+  $("#modalRoot").innerHTML='<div class="overlay" onclick="if(event.target.classList.contains(\'overlay\'))closeModal()"><div class="sheet">'+html+'</div></div>';
+}
+function closeModal(){ $("#modalRoot").innerHTML=""; }
+
+/* ============ 启动 ============ */
+load();
+goTab("shelf");
+if(state.timer){ /* 计时按累计时间继续，无需特殊处理 */ }
+
+</script>
+</body>
+</html>
